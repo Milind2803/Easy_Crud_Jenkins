@@ -150,10 +150,3 @@ nohup java -jar student-registration-backend-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
 ```
 
 ---
-
-- Use IAM roles instead of hardcoded credentials  
-- Store configuration securely (avoid direct commits of secrets)  
-- Monitor application logs regularly  
-- Use system services or containers for production deployments  
-
----
