@@ -1,10 +1,10 @@
-# 📘 CI/CD Documentation – Jenkins with Prod Server & RDS Integration
+📘 CI/CD Documentation – Jenkins with Prod Server & RDS Integration
 
 This document describes the complete setup of a CI/CD pipeline using Jenkins, a production server, and AWS RDS (MariaDB) to deploy a full-stack application.
 
 ---
 
-## 🚀 Step 1: Setup Jenkins Server
+🚀 Step 1: Setup Jenkins Server
 
 Provision a Jenkins server and install the required tools:
 - Java
@@ -15,7 +15,7 @@ Ensure Jenkins is accessible via browser and initial setup is completed.
 
 ---
 
-## 🖥️ Step 2: Setup Production Server (Prod Agent)
+🖥️ Step 2: Setup Production Server (Prod Agent)
 
 Create a separate server (EC2 or VM) to act as a **production server**.
 
@@ -31,11 +31,11 @@ Ensure Jenkins can successfully connect to this agent.
 
 ---
 
-## 🔗 Step 3: Create Jenkins Pipeline
+🔗 Step 3: Create Jenkins Pipeline
 
 Create a new Jenkins pipeline and configure it to use the **prod agent**.
 
-### 📌 Example Pipeline
+📌 Example Pipeline
 
 ```groovy
 pipeline {
@@ -74,7 +74,7 @@ pipeline {
 
 ---
 
-## 🗄️ Step 4: Create MariaDB RDS Database
+🗄️ Step 4: Create MariaDB RDS Database
 
 Create an AWS RDS instance using **MariaDB** engine.
 
@@ -86,7 +86,7 @@ Create an AWS RDS instance using **MariaDB** engine.
 
 ---
 
-## 🔧 Step 5: Configure Backend with RDS
+🔧 Step 5: Configure Backend with RDS
 
 1. Copy the RDS endpoint from AWS.
 2. Go to your backend GitHub repository.
@@ -107,7 +107,7 @@ spring.jpa.show-sql=true
 
 ---
 
-## 🌐 Step 6: Configure Frontend with Backend URL
+🌐 Step 6: Configure Frontend with Backend URL
 
 1. Go to your frontend repository.
 2. Update API base URL using:
@@ -118,13 +118,13 @@ spring.jpa.show-sql=true
 
 ---
 
-## 📦 Step 7: Install Node.js on Production Server
+📦 Step 7: Install Node.js on Production Server
 
 Install Node.js on the production server to support frontend build.
 
 ---
 
-## ▶️ Step 8: Execute Pipeline
+▶️ Step 8: Execute Pipeline
 
 Run the Jenkins pipeline and monitor execution.
 
@@ -133,14 +133,14 @@ Run the Jenkins pipeline and monitor execution.
 
 ---
 
-## 🔍 Step 9: Verify Application
+🔍 Step 9: Verify Application
 
 - Access frontend via browser  
 - Verify backend API is accessible on port **8081**
 
 ---
 
-## ⚠️ Step 10: Manual Backend Start (If Needed)
+⚠️ Step 10: Manual Backend Start (If Needed)
 
 If backend is not running after pipeline execution, start it manually on the production server:
 
@@ -150,17 +150,6 @@ nohup java -jar student-registration-backend-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
 ```
 
 ---
-
-## ✅ Outcome
-
-- Jenkins pipeline configured with production agent  
-- Backend deployed and connected to RDS  
-- Frontend deployed and integrated with backend  
-- Full application accessible via public IP  
-
----
-
-## 🔒 Best Practices
 
 - Use IAM roles instead of hardcoded credentials  
 - Store configuration securely (avoid direct commits of secrets)  
